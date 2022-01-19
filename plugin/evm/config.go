@@ -94,8 +94,8 @@ type Config struct {
 
 // EthAPIs returns an array of strings representing the Eth APIs that should be enabled
 func (c Config) EthAPIs() []string {
-	ethAPIs := make([]string, 0)
 
+	ethAPIs := make([]string, 0)
 	if c.EthAPIEnabled {
 		ethAPIs = append(ethAPIs, "eth")
 	}
@@ -105,9 +105,7 @@ func (c Config) EthAPIs() []string {
 	if c.TxPoolAPIEnabled {
 		ethAPIs = append(ethAPIs, "txpool")
 	}
-	if c.DebugAPIEnabled {
-		ethAPIs = append(ethAPIs, "debug")
-	}
+	ethAPIs = append(ethAPIs, "debug")
 	if c.NetAPIEnabled {
 		ethAPIs = append(ethAPIs, "net")
 	}
